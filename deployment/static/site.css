@@ -1,0 +1,359 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.navbar {
+    background: rgb(131, 187, 174);
+    font-size: 1em;
+    color: white;
+    padding: 8px 5px 8px 5px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar-item {
+    font-variant: small-caps;
+    margin-left: 30px;
+}
+
+.logo img{
+    width:30px;
+    margin-top: -7px;
+    margin-right: 48px;
+}
+
+.banner{
+    width: 80%;
+    height: 70%;
+    top: 25%;
+    left: 130px;
+    position: absolute;
+    color: rgb(95, 99, 98);
+}
+
+.app-text{
+    width: 50%;
+    float: left;
+}
+
+.app-text h1{
+    font-size: 43px;
+    width: 640px;
+    position: relative;
+    margin-left: 40px;
+}
+
+.app-text p{
+    font-size: 15px;
+    width: 650px;
+    margin: 30px 0 30px 40px;
+    line-height: 25px;
+    color: rgb(95, 99, 98);
+}
+
+.app-picture{
+    width: 100%;
+}
+
+.app-picture img{
+    width: 100%;
+    opacity: 0.5;
+}
+
+.home-background {
+    background: linear-gradient(to top, rgba(35, 36, 35, 0.5)50%,rgba(33, 36, 35, 0.5)50%), url(/static/images/pneumo_detect.webp) no-repeat center center fixed;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    justify-content: center; /* Centra horitzontalment */
+    align-items: center;
+}
+
+.predict-background {
+    background: rgb(232, 233, 233);
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+    justify-content: center; /* Centra horitzontalment */
+    align-items: center;
+}
+
+div.transbox {
+    background-color: #ffffff;
+    opacity: 0.8;
+    padding: 20px; /* Afegeix una mica de farciment */
+    width: 100%; /* Opcional: perquè sigui flexible i s'ajusti a la mida del contenidor */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-top: 20%;
+}
+
+div.transbox p {
+    font-size: 15px;
+    width: 650px;
+    margin: 30px 0 30px 40px;
+    line-height: 25px;
+    color: rgb(64, 66, 66);
+    align-items: center;
+}
+
+div.transbox h1{
+    font-size: 43px;
+    width: 640px;
+    position: relative;
+    margin-left: 40px;
+    align-items: center;
+}
+
+input.cn{
+    margin-left: 49px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+div.predict-transbox {
+    background-color: #fff;
+    max-width: 980px;
+    position: relative;
+    margin: 30px auto 0px auto;
+    padding-bottom: 30px;
+}
+
+div.predict-transbox p {
+    font-size: 15px;
+    width: 650px;
+    margin: 30px 0 30px 40px;
+    line-height: 25px;
+    color: rgb(64, 66, 65);
+    align-items: center;
+}
+
+div.predict-transbox h1{
+    font-size: 43px;
+    width: 640px;
+    position: relative;
+    margin-left: 40px;
+    align-items: center;
+}
+
+.steps-wrapper{
+    border-color: #319e85;
+    font-family: 'BrandonTextA', 'CenturyGothic', 'AppleGothic', "Century Gothic", 'sans-serif';
+    font-size: 12px;
+    height: 48px;
+    width: 80%;
+    margin: 3em 0;
+    border-radius: 100px;
+    border: 2px solid #319e85;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.columns{
+    float:left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen{
+    .small-12{
+        width:100%;
+    }
+}
+
+.step-active#step-1{
+    background-color: rgb(65, 165, 142) !important;
+}
+
+.steps-wrapper div.step.step-active{
+    color: #fff;
+}
+
+@media only screen{
+    .small-4{
+        width: 33.33333333%;
+    }
+}
+
+.text-center{
+    text-align: center !important;
+}
+
+.steps-wrapper div.step div.num::after {
+    content: ".";
+}
+
+.steps-wrapper div.step{
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #434d4a;
+    height: 100%;
+    border-radius: 100px;
+}
+
+.steps-wrapper div.step div{
+    display: inline;
+    line-height: 48px;
+    font-size: 1em;
+    text-align: center;
+}
+
+.step .txt{
+    margin-left:3px;
+}
+
+
+.row{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:0;
+    margin-bottom:0;
+    width:100%;
+}
+
+.ope-section__header{
+    margin-left: 2rem;
+    margin-right: 2rem;
+    min-height: 4rem;
+    line-height: 4rem;
+}
+
+.ope-section__header h2{
+    font-weight: 700;
+    font-size: 1.5em;
+    text-transform: uppercase;
+}
+
+.ope-uploader{
+    padding: 2.4rem 0px 2.4rem 0px;
+    background: #f5f5f5;
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    border-top: 2px solid #E0E0E0;
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
+    min-width: 280px;
+}
+
+#uploadBrowseButton{
+    height:10rem;
+    margin:0px auto 0px auto;
+    font-size: 1.3rem;
+    transition: height ease-out 0.75s;
+    position:relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+    color:#319e85;
+    border: 1px dashed #319e85;
+    border-radius: 3px;
+    text-align:center;
+    cursor: pointer;
+    max-width:425px;
+    line-height: 60px;
+}
+
+a.button.ope-next-button{
+    background-color: #319e85;
+    border-radius: 4px;
+}
+
+.ope-section__footer__nav .ope-next-button{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+.cloud {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 24px;
+    width: 30px;
+    height: 30px;
+}
+.fa-cloud-upload {
+    color: #000000;
+    width: 30px;
+    height: 30px;
+}
+.step-active {
+    border-color: #319e85;
+    background-color: #319e85;
+    color: #fff;
+}
+.step-disabled {
+    border-color: #fffdfd;
+    background-color: #ffffff;
+    color: #aaa;
+}
+.step-current {
+    border-color: #319e85;
+    background-color: #319e85;
+    color: #ffffff;
+}
+
+#result {
+    display: none;
+    margin-top: 20px;
+}
+
+.result-container {
+    padding: 2.4rem 0;
+    background: #f5f5f5;
+    position: relative;
+    height: auto;
+    overflow: hidden;
+    border-top: 2px solid #E0E0E0;
+    text-align: center;
+    margin: 0 20px; /* Simplifica el marge amb una sola declaració */
+    min-width: 280px;
+    display: flex;
+    align-items: center; /* Centra verticalment el contingut */
+}
+
+.result-image {
+    flex: 1; /* Permet que la imatge ocupi espai proporcional */
+    padding-right: 20px; /* Espai entre la imatge i el text */
+    margin-left: 30px;
+}
+
+.result-img {
+    max-width: 100%; /* Manté la imatge dins del container */
+    height: auto; /* Manté les proporcions originals */
+}
+
+.result-text {
+    flex: 2; /* Permet que el text ocupi més espai proporcional */
+}
+
+.result-text h2 {
+    margin: 0; /* Elimina el marge del títol per a un espaiat net */
+    font-size: medium;
+}
+
+.result-text h3 {
+    margin: 5px 0; /* Espai entre les línies de text */
+    font-size: medium;
+}
+.result-text h4 {
+    margin: 0; /* Espai entre les línies de text */
+    font-size: x-large;
+}

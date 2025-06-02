@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--#serveix per si ho mires des del mòbil es vegi bé-->
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css')}}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('home') }}" class="navbar-item">Home</a>
+        <a href="{{ url_for('predict') }}" class="navbar-item">Prediction</a>
+    </div>   
+    <div>
+        {% block content %}
+        {% endblock %}
+        <hr/>
+    </div>
+</body>
+</html>
