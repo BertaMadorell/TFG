@@ -1,0 +1,62 @@
+{% extends "index.html" %}
+{% block title %}
+Prediction
+{% endblock %}
+{% block content %}
+<body class="predict-background">
+    <div class="predict-transbox">
+        <div class="row">
+            <div class="small-12 columns">
+                <div class= "steps-wrapper columns">
+                    <div id="step-1" class="step small-4 text-center columns step-active step-current" style="cursor: pointer;">
+                        <div class="num">
+                            1
+                        </div>
+                        <div class="txt">
+                            <span>Add images</span>
+                        </div>
+                    </div>
+                    <div id="step-2" class="step small-4 txt-center columns step-disabled" style="cursor: pointer;">
+                        <div class="num">
+                            2
+                        </div>
+                        <div class="txt">
+                            <span>Prediction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header class="ope-section__header">
+            <h2>Post an image</h2>
+        </header>
+        <div></div>
+        <div id="ope-uploader" class="ope-uploader">
+            <div id="uploadControls">
+                <form method="post" action="/predict/" enctype="multipart/form-data">
+                    <input id="fileUploadInput" type="file" name="file" autocomplete="off" required style="display:none;" onchange="updateFileName()"">
+                    <div id="uploadBrowseButton" onclick="document.getElementById('fileUploadInput').click();" style="display:flex;align-items: center;">
+                        <span>Choose file</span>
+                        <img id="uploader-icon" src="/static/images/upload.png" style="width: 50px; height: 40px;">
+                    </div>
+                    <div style="display: flex; align-items: center; margin-top: 20px; margin-left:39%;">
+                        <button id="submitButton" type="submit" style="padding: 10px 20px; background-color: #319e85; color: #ffffff; border: none; border-radius: 5px; cursor: pointer;">
+                            Submit
+                        </button>
+                        <span id="fileName" style="margin-left: 10px;">No file chosen</span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function updateFileName() {
+            var input = document.getElementById('fileUploadInput');
+            var fileName = input.files.length > 0 ? input.files[0].name : 'No file chosen';
+            document.getElementById('fileName').textContent = fileName;
+        }
+    </script>
+                
+    </body>
+{% endblock %}
+

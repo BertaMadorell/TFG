@@ -1,0 +1,74 @@
+{% extends "index.html" %}
+{% block title %}
+Prediction
+{% endblock %}
+{% block content %}
+<body class="predict-background">
+    <div class="predict-transbox">
+        <div class="row">
+            <div class="small-12 columns">
+                <div class= "steps-wrapper columns">
+                    <div id="step-1" class="step small-4 text-center columns step-disabled" style="cursor: pointer;">
+                        <div class="num">
+                            1
+                        </div>
+                        <div class="txt">
+                            <span>Add images</span>
+                        </div>
+                    </div>
+                    <div id="step-2" class="step small-4 txt-center columns step-active step-current" style="cursor: pointer;">
+                        <div class="num">
+                            2
+                        </div>
+                        <div class="txt">
+                            <span>Prediction</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <header class="ope-section__header">
+            <h2>Results</h2>
+        </header>
+        <div></div>
+        <p id="result" style="display: none; margin-top: 20px;">
+            {% with messages = get_flashed_messages() %}
+            {% if messages %}
+            <div class="result-container">
+                    <div class="result-text">
+                        <h2>Prediction:</h2>
+                        <h4 style="color:rgb(44, 136, 152); margin-top: 20px;">{{ messages[0] }}</h4>
+                    </div>
+                </div>
+                <div class="result-container">
+                    <div class="result-image">
+                        <img src="{{ messages[4] }}" alt="Predicció" class="result-img">
+                    </div>
+                    <div class="result-text">
+                        <h2>Probability Grad CAM:</h2>
+                        <h2 style="color: #997744; margin-top: 20px;">{{ messages[1] }}</h2>
+                    </div>
+                </div>
+                <div class="result-container">
+                    <div class="result-image">
+                            <img src="{{ messages[5] }}" alt="Predicció" class="result-img">
+                        </div>
+                        <div class="result-text">
+                            <h2>Probability Occlusion:</h2>
+                            <h2 style="color: #997744; margin-top: 20px;">{{ messages[2] }}</h2>
+                        </div>
+                </div>
+            {% endif %}
+        {% endwith %}
+        </p>
+        <button  style="padding: 10px 20px; background-color: #319e85; color: #ffffff; border: none; border-radius: 5px; cursor: pointer; margin-left:43%;" onclick="window.history.back();">Go back</button>
+    </div>
+    <script>
+        function updateFileName() {
+            var input = document.getElementById('fileUploadInput');
+            var fileName = input.files.length > 0 ? input.files[0].name : 'No file chosen';
+            document.getElementById('fileName').textContent = fileName;
+        }
+    </script>
+    </body>
+{% endblock %}
